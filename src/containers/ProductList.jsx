@@ -1,15 +1,31 @@
-import React from 'react';
-import ProductItem from '../components/ProductItem';
-import '../styles/ProductList.scss';
+import React, { useEffect, useState } from "react";
+import ProductItem from "../components/ProductItem";
+import "../styles/ProductList.scss";
+import axios from "axios";
+
+const API = "https://api.escuelajs.co/api/v1/products";
 
 const ProductList = () => {
-	return (
-		<section className="main-container">
-			<div className="ProductList">
-				<ProductItem />
-			</div>
-		</section>
-	);
-}
+  const [products, setProducts] = useState([]);
+
+  //The way the professor used the useEffect hook no longer works. useEffect hook must always return a synchronous function.
+  useEffect(() => {
+    const getProducts = async () => {
+      const response = await axios(API);
+      setProducts(response.data);
+    };
+    getProducts();
+  }, []);
+
+  return (
+    <section className="main-container">
+      <div className="ProductList">
+        {products.map((product) => (
+          <ProductItem />
+        ))}
+      </div>
+    </section>
+  );
+};
 
 export default ProductList;
