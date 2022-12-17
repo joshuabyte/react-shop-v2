@@ -12,6 +12,11 @@ nav {
 .nav-logo {
 	width: 100px;
 }
+
+.navbar-left a{
+	display: flex;
+}
+
 .navbar-left ul,
 .navbar-right ul {
 	list-style: none;

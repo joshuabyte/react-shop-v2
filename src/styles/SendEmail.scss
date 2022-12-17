@@ -7,10 +7,11 @@
 	place-items: center;
 }
 .form-container {
-	display: grid;
-	grid-template-rows: auto 1fr auto;
+	display: flex;
+	flex-direction: column;
 	width: 300px;
-	justify-items: center;
+	justify-content: center;
+	align-items: center;
 }
 .logo {
 	width: 150px;
