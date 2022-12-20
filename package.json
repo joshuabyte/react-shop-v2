@@ -5,6 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "webpack serve --open",
     "build": "webpack --mode production"
   },
@@ -31,6 +33,7 @@
   },
   "devDependencies": {
     "css-loader": "^6.7.2",
+    "gh-pages": "^4.0.0",
     "mini-css-extract-plugin": "^2.7.2",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
@@ -43,5 +46,5 @@
   "bugs": {
     "url": "https://github.com/protondk/react-shop-v2/issues"
   },
-  "homepage": "https://github.com/protondk/react-shop-v2#readme"
+  "homepage": "https://protondk.github.io/react-shop-v2"
 }
