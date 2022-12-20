@@ -19,7 +19,7 @@ const App = () => {
   const initialState = useInitialState();
   return (
     <AppContext.Provider value={initialState}>
-    <BrowserRouter basename="/react-shop-v2">
+    <BrowserRouter>
       {/* Adding the header here below, allows it to show on all routes. It should not be showing on the NotFound page. Will fix later. */}
       <Header></Header>
       <Routes>
